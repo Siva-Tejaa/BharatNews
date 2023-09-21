@@ -4,7 +4,7 @@ import SearchIcon from "../../assets/SearchIcon.png";
 
 const Header = () => {
   return (
-    <div className='text-white bg-[var(--main-color)] flex items-center justify-between p-1 py-2 laptop:p-2'>
+    <div className='text-white bg-[var(--main-color)] flex items-center justify-between p-1 py-3 laptop:p-2'>
         <div>
             <img src={TheBharatNewsLogoWhite} className='w-64 tablet:w-80'/>
         </div>
