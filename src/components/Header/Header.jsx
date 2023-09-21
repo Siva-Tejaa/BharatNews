@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className='text-white bg-[var(--main-color)] flex items-center justify-between p-1 py-2 laptop:p-2'>
         <div>
-            <img src={TheBharatNewsLogoWhite} className='w-72 tablet:w-80'/>
+            <img src={TheBharatNewsLogoWhite} className='w-64 tablet:w-80'/>
         </div>
         <div>
             <form className='hidden laptop:flex items-center justify-center'>
