@@ -12,3 +12,15 @@
   /* color: black; */
   font-family: "Lato",sans-serif;
 }
+
+.fontfamily{
+  /* font-family: "blacker_pro_displayheavy"; */
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.tit-desc{
+  display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
