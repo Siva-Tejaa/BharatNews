@@ -42,6 +42,7 @@ const TopHeadlines = () => {
                     <div key={index} className='bg-white shadow-[0_0_6px_0_rgba(121,121,121,0.3)] my-5 p-4 rounded-md hover:shadow-[0_0_10px_0_rgba(121,121,121,0.3)] tablet:w-[475px] laptop:w-[600px]'>
                         <div className='text-[16px] font-semibold tit-desc'>{headline?.title}</div>
                         <img src={headline?.image} alt="Bharat News" className='rounded-sm'/>
+                        <p>Published At : {headline?.publishedAt}</p>
                     </div>
                 ))
             }
