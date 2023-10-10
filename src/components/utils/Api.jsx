@@ -1,4 +1,4 @@
-export const API_KEY = `21fd36a8ae3543528f6dd5531fb1d3fb` ;
+export const API_KEY = `e042a1c3528b33266346284b0435abfb` ;
 
 export const FILTERS = `&language=en&pageSize=100&apiKey=${API_KEY}`
 
