@@ -1,18 +1,20 @@
-export const API_KEY = `e042a1c3528b33266346284b0435abfb` ;
+// export const API_KEY = `e042a1c3528b33266346284b0435abfb` ;
 
-export const FILTERS = `&language=en&pageSize=100&apiKey=${API_KEY}`
+// export const FILTERS = `&language=en&pageSize=100&apiKey=${API_KEY}`
 
-// https://newsapi.org/v2/top-headlines?${FILTERS}
-export const TOP_HEADLINES_IN_WORLD = `https://newsapi.org/v2/top-headlines?sortBy=`;
+// // https://newsapi.org/v2/top-headlines?${FILTERS}
+// export const TOP_HEADLINES_IN_WORLD = `https://newsapi.org/v2/top-headlines?sortBy=`;
 
-// https://newsapi.org/v2/top-headlines?country=in&${FILTERS}
-export const TOP_HEADLINES_IN_COUNTRY = `https://newsapi.org/v2/top-headlines?country=`;
+// // https://newsapi.org/v2/top-headlines?country=in&${FILTERS}
+// export const TOP_HEADLINES_IN_COUNTRY = `https://newsapi.org/v2/top-headlines?country=`;
 
-// https://newsapi.org/v2/top-headlines?category=entertainment&${FILTERS}
-export const CATEGORY_HEADLINES = `https://newsapi.org/v2/top-headlines?category=`;
+// // https://newsapi.org/v2/top-headlines?category=entertainment&${FILTERS}
+// export const CATEGORY_HEADLINES = `https://newsapi.org/v2/top-headlines?category=`;
 
-// https://newsapi.org/v2/everything?q=india&${FILTERS}
-export const SEARCH_NEWS = `https://newsapi.org/v2/everything?q=`;
+// // https://newsapi.org/v2/everything?q=india&${FILTERS}
+// export const SEARCH_NEWS = `https://newsapi.org/v2/everything?q=`;
+
+//IN SHORTS NEWS API
 
 export const NewsCategories = [
     {

@@ -20,7 +20,30 @@
 
 .tit-desc{
   display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+.content-desc{
+  display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/*---------- Side Scrollbar ----------*/
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #011E29;
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #d4d4d8;
 }
