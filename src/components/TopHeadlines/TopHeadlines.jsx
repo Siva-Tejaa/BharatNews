@@ -51,7 +51,7 @@ const TopHeadlines = () => {
             <>
              {
                 Array(3).fill("").map((arr,index) =>(
-                  <div key={index} className='bg-white shadow-[0_0_6px_0_rgba(121,121,121,0.3)] my-5 p-2 rounded-md hover:shadow-[0_0_10px_0_rgba(121,121,121,0.3)] flex flex-col gap-1 w-[380px] tablet:w-[475px] laptop:w-[750px] laptop:flex laptop:flex-row'>
+                  <div key={index} className='bg-white shadow-[0_0_6px_0_rgba(121,121,121,0.3)] my-5 p-2 rounded-md hover:shadow-[0_0_10px_0_rgba(121,121,121,0.3)] flex flex-col gap-1 w-[370px] tablet:w-[475px] laptop:w-[750px] laptop:flex laptop:flex-row'>
                      <Skeleton className='rounded-sm items-center border border-solid  min-w-[100%] max-w-[100%] min-h-[12rem] max-h-[12rem] laptop:min-w-[18rem] laptop:max-w-[18rem] laptop:min-h-[11rem] laptop:max-h-[11rem]'/>
                      <div className='flex flex-col gap-1 laptop:gap-[6px]'>
                        <Skeleton className='laptop:w-[436px] h-9'/>
