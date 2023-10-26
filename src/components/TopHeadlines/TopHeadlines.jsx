@@ -17,7 +17,7 @@ const TopHeadlines = () => {
      .then((res) => res.json())
      .then((json) => {
       setHeadlines(json.articles);
-    //   setLoading(false);
+      setLoading(false);
 
     //   console.log(headlines)
      })
