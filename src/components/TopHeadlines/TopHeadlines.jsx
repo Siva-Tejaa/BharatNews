@@ -13,7 +13,7 @@ const TopHeadlines = () => {
   const[loading, setLoading] = useState(false);
 
   const fetchTopHeadlines = async () => {
-    await fetch("https://gnews.io/api/v4/top-headlines?category=world&lang=en&apikey=53cf98e7e20debf6881f95eeadb90f18")
+    await fetch("https://gnews.io/api/v4/top-headlines?category=world&lang=en&apikey=6e0c38391feb3508a7bc42d356ceda57")
      .then((res) => res.json())
      .then((json) => {
       setHeadlines(json.articles);
