@@ -14,9 +14,11 @@ const App = () => {
 
   const[search, setSearch] = useState(false);
   const[searchtext, setSearchText] = useState("");
+  const[newscategory, setNewsCategory] = useState("general");
+  const[newscountry, setNewsCountry] = useState("");
 
   return (
-    <Context.Provider value={{search, setSearch, searchtext, setSearchText}}>
+    <Context.Provider value={{search, setSearch, searchtext, setSearchText, newscategory, setNewsCategory, newscountry, setNewsCountry}}>
     <div>
       <Header/>
       <HeaderMenu/>

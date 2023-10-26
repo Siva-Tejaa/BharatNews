@@ -1,16 +1,34 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import "./HeaderMenu.css";
+
+import Context from '../utils/Context';
 
 import { NewsCategories } from '../utils/Api';
 
 const HeaderMenu = () => {
+
+  const{newscategory, setNewsCategory, newscountry, setNewsCountry} = useContext(Context);
+
+  const setCategory = (category) => {
+    setNewsCategory(category);
+
+    if(category === "nation"){
+      setNewsCountry("in");
+    }
+    else{
+      setNewsCountry("");
+    }
+
+    console.log(category)
+  }
+
   return (
     <div className='bg-[#FFFFFF] border-b-[1px] flex gap-4 overflow-auto slider mx-1 py-1 laptop:justify-around'>
         {
             NewsCategories.map((category) =>(
-                <div key={category.id} className='hover:bg-[#e3e5e6] p-1 px-2 cursor-pointer rounded-md'>
-                    <p className='text-[14px] font-[600]'>{category?.categoryName}</p>
-                </div>
+                <button key={category.id} className={newscategory == category?.categoryValue ? 'bg-[#e3e5e6] p-1 px-2 cursor-pointer rounded-md' : 'hover:bg-[#e3e5e6] p-1 px-2 cursor-pointer rounded-md'}>
+                    <p className='text-[14px] font-[600]' onClick={() => setCategory(category?.categoryValue)}>{category?.categoryName}</p>
+                </button>
             ))
         }
     </div>

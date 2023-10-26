@@ -1,25 +1,26 @@
-import React,{useState, useEffect} from 'react';
+import React,{useState, useEffect, useContext} from 'react';
 import NoImageFound from "../../assets/NoImageFound.png";
 import moment from 'moment';
-import Skeleton, {SkeletonTheme} from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css'
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import Context from '../utils/Context';
+
 // import {TOP_HEADLINES_IN_WORLD} from "../utils/Api.jsx"
 
 const TopHeadlines = () => {
 
+  const{newscategory, setNewsCategory, newscountry, setNewsCountry} = useContext(Context);
+
   const[sort, setSort] = useState("publishedAt");
-  const[type, setType] = useState("");
   const [headlines, setHeadlines] = useState([]);
   const[loading, setLoading] = useState(false);
 
   const fetchTopHeadlines = async () => {
-    await fetch("https://gnews.io/api/v4/top-headlines?category=world&lang=en&apikey=6e0c38391feb3508a7bc42d356ceda57")
+    await fetch(`https://gnews.io/api/v4/top-headlines?category=${newscategory}&lang=en&country=${newscountry}&apikey=6e0c38391feb3508a7bc42d356ceda57`)
      .then((res) => res.json())
      .then((json) => {
       setHeadlines(json.articles);
       setLoading(false);
-
-    //   console.log(headlines)
      })
      .catch((err) => console.log(err));
 
@@ -29,7 +30,7 @@ const TopHeadlines = () => {
     setLoading(true);
     fetchTopHeadlines();
 
-  }, [])
+  }, [newscategory])
 
   return (
     <div className='bg-white p-2 rounded-sm'>

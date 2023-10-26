@@ -24,42 +24,42 @@ export const NewsCategories = [
 
     },
     {
-      id:2,
-      categoryName:"India",
-      categoryValue:"india"
+      id: 2,
+      categoryName:"World",
+      categoryValue: "world"
     },
-    // {
-    //   id: 3,
-    //   categoryName:"General",
-    //   categoryValue: "general"
-    // },
     {
-      id: 3,
+      id:3,
+      categoryName:"India",
+      categoryValue:"nation"
+    },
+    {
+      id: 4,
       categoryName:"Business",
       categoryValue: "business"
     },
     {
-      id: 4,
+      id: 5,
       categoryName:"Entertainment",
       categoryValue: "entertainment"
     },
    {
-      id: 5,
+      id: 6,
       categoryName:"Health",
       categoryValue: "health"
    },
    {
-    id: 6,
+    id: 7,
     categoryName:"Science",
     categoryValue: "science"
   },
   {
-    id: 7,
+    id: 8,
     categoryName:"Sports",
     categoryValue: "sports"
   },
   {
-    id: 8,
+    id: 9,
     categoryName:"Technology",
     categoryValue: "technology"
  }
