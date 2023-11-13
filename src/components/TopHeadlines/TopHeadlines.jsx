@@ -1,9 +1,11 @@
 import React,{useState, useEffect, useContext} from 'react';
 import NoImageFound from "../../assets/NoImageFound.png";
+import NoNewsFound from "../../assets/NoNewsFound.jpg";
 import moment from 'moment';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Context from '../utils/Context';
+import { countries } from '../utils/Api';
 
 // import {TOP_HEADLINES_IN_WORLD} from "../utils/Api.jsx"
 
@@ -30,17 +32,20 @@ const TopHeadlines = () => {
     setLoading(true);
     fetchTopHeadlines();
 
-  }, [newscategory])
+  }, [newscategory, newscountry])
 
   return (
     <div className='bg-white p-2 rounded-sm'>
         <div className='flex items-center justify-between tablet:w-[475px] laptop:w-[750px]'>
             <div className='text-[18px] font-extrabold flex items-center text-[#2f2f2f] fontfamily tablet:text-[20px]'><div className='w-1 h-8 rounded-full bg-[#2f2f2f] mr-1'></div>Top Headlines</div>
             <div>
-                <select className='p-2 bg-[#f0f1f2] outline-none rounded-sm'>
-                    <option>Published At</option>
-                    <option>Popularity</option>
-                    <option>Relevancy</option>
+                <select value={newscountry} onChange={(e) => setNewsCountry(e.target.value)}className='p-2 bg-[#f0f1f2] outline-none rounded-sm'>
+                  <option disabled>-- Select Country --</option>
+                  {
+                    countries.map((country) => (
+                      <option key={country?.id} value={country?.countryCode}>{country?.countryName}</option>
+                    ))
+                  }
                 </select>
             </div>
         </div>
@@ -67,8 +72,9 @@ const TopHeadlines = () => {
              }
             </> : 
 
+            headlines?.length>1 ?
             
-             headlines?.map((headline, index) => (
+              headlines?.map((headline, index) => (
                     <div key={index} className='bg-white shadow-[0_0_6px_0_rgba(121,121,121,0.3)] my-5 p-2 rounded-md hover:shadow-[0_0_10px_0_rgba(121,121,121,0.3)] tablet:w-[475px] laptop:w-[750px] laptop:flex gap-3'>
                         <a target='_blank' href={headline?.url}><img src={headline?.image ? headline?.image : NoImageFound} alt="Bharat News" className='rounded-sm bg-slate-50 items-center border border-solid border-[#a1a0a0] min-w-[100%] max-w-[100%] min-h-[15rem] max-h-[15rem] laptop:min-w-[18rem] laptop:max-w-[18rem] laptop:min-h-[11rem] laptop:max-h-[11rem]'/></a>
                         <div className='flex flex-col gap-[3px]'>
@@ -80,6 +86,10 @@ const TopHeadlines = () => {
                         
                     </div>
             ))
+             :
+             <div className='flex items-center justify-center h-[100vh]'>
+              <img src={NoNewsFound} alt="No News Found" className='w-[25rem]'/>
+             </div>
             
         }
 

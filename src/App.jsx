@@ -15,7 +15,7 @@ const App = () => {
   const[search, setSearch] = useState(false);
   const[searchtext, setSearchText] = useState("");
   const[newscategory, setNewsCategory] = useState("general");
-  const[newscountry, setNewsCountry] = useState("");
+  const[newscountry, setNewsCountry] = useState("in");
 
   return (
     <Context.Provider value={{search, setSearch, searchtext, setSearchText, newscategory, setNewsCategory, newscountry, setNewsCountry}}>

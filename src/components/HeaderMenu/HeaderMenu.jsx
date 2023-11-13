@@ -12,14 +12,14 @@ const HeaderMenu = () => {
   const setCategory = (category) => {
     setNewsCategory(category);
 
-    if(category === "nation"){
-      setNewsCountry("in");
-    }
-    else{
-      setNewsCountry("");
-    }
+    // if(category === "nation"){
+    //   setNewsCountry("in");
+    // }
+    // else{
+    //   setNewsCountry("");
+    // }
 
-    console.log(category)
+    // console.log(category)
   }
 
   return (
