@@ -17,11 +17,18 @@ const TopHeadlines = () => {
   const [headlines, setHeadlines] = useState([]);
   const[loading, setLoading] = useState(false);
 
+  const[error, setError] = useState();
+
   const fetchTopHeadlines = async () => {
+    setError();
     await fetch(`https://gnews.io/api/v4/top-headlines?category=${newscategory}&lang=en&country=${newscountry}&apikey=5f536069914487ef151394fd4108eb67`)
      .then((res) => res.json())
      .then((json) => {
-      setHeadlines(json.articles);
+      if(json.articles){
+        setHeadlines(json.articles);
+      }else{
+        setError(json.errors[0]);
+      }
       setLoading(false);
      })
      .catch((err) => console.log(err));
@@ -87,7 +94,10 @@ const TopHeadlines = () => {
                     </div>
             ))
              :
-             <div className='flex items-center justify-center h-[100vh]'>
+             <div className='flex flex-col items-center justify-around h-[100vh]'>
+              {/* {JSON.stringify(error)} */}
+              <p className='w-[23rem] text-center'>{error}</p>
+
               <img src={NoNewsFound} alt="No News Found" className='w-[25rem]'/>
              </div>
             
