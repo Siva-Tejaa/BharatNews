@@ -8,7 +8,8 @@ import Body from './components/Body/Body';
 import Context from './components/utils/Context';
 import HeaderMenu from './components/HeaderMenu/HeaderMenu';
 
-// import {Routes , Route} from 'react-router-dom';
+import {Routes , Route, Navigate} from 'react-router-dom';
+import SearchPage from './components/Search/SearchPage';
 
 const App = () => {
 
@@ -23,7 +24,11 @@ const App = () => {
       <Header/>
       <HeaderMenu/>
       <Search/>
-      <Body/>
+      <Routes>
+        <Route path="/" element={<Body/>}/>
+        <Route path="/search/:searchtext" element={<SearchPage/>}/>
+        <Route path="*" element={<Navigate to="/"/>}/>
+      </Routes>
     </div>
     </Context.Provider>
   )

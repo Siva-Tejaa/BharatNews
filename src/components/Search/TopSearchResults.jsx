@@ -7,8 +7,12 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import Context from '../utils/Context';
 import { countries } from '../utils/Api';
 
+import {useParams} from "react-router-dom";
 
-const TopHeadlines = () => {
+
+const TopSearchResults = () => {
+
+  const{searchtext} = useParams();
 
   const{newscategory, setNewsCategory, newscountry, setNewsCountry} = useContext(Context);
 
@@ -19,8 +23,10 @@ const TopHeadlines = () => {
   const[error, setError] = useState();
 
   const fetchTopHeadlines = async () => {
+    // setNewsCategory("general");
+    // setNewsCountry("in");
     setError();
-    await fetch(`https://gnews.io/api/v4/top-headlines?category=${newscategory}&lang=en&country=${newscountry}&apikey=41fe03aadffe679c5d0fc836999eaa0c`)
+    await fetch(`https://gnews.io/api/v4/search?q=${searchtext}&category=${newscategory}&lang=en&country=${newscountry}&apikey=41fe03aadffe679c5d0fc836999eaa0c`)
      .then((res) => res.json())
      .then((json) => {
       if(json.articles){
@@ -38,12 +44,12 @@ const TopHeadlines = () => {
     setLoading(true);
     fetchTopHeadlines();
 
-  }, [newscategory, newscountry])
+  }, [newscategory, newscountry, searchtext])
 
   return (
     <div className='bg-white p-2 rounded-sm'>
         <div className='flex items-center justify-between tablet:w-[475px] laptop:w-[750px]'>
-            <div className='text-[18px] font-extrabold flex items-center text-[#2f2f2f] fontfamily tablet:text-[20px]'><div className='w-1 h-8 rounded-full bg-[#2f2f2f] mr-1'></div>Top Headlines</div>
+            <div className='text-[18px] font-extrabold flex items-center text-[#2f2f2f] fontfamily tablet:text-[20px]'><div className='w-1 h-8 rounded-full bg-[#2f2f2f] mr-1'></div>Top Search Results</div>
             <div>
                 <select value={newscountry} onChange={(e) => setNewsCountry(e.target.value)}className='p-2 bg-[#f0f1f2] outline-none rounded-sm'>
                   <option disabled>-- Select Country --</option>
@@ -106,4 +112,4 @@ const TopHeadlines = () => {
   )
 }
 
-export default TopHeadlines
+export default TopSearchResults;
